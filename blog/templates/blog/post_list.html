@@ -1,16 +1,20 @@
 <html>
-<head>
-<title>Fajna stroneczka </title>
-</head>
+    <head>
+        <title>Django Girls blog</title>
+    </head>
+    <body>
+      <div>
+  <h1><a href="/">Django Girls Blog</a></h1>
+</div>
 
+{% for post in posts %}
+  <div>
+      <p>published: {{ post.published_date }}</p>
+      <h2><a href="">{{ post.title }}</a></h2>
+      <p>{{ post.text|linebreaksbr }}</p>
+  </div>
+{% endfor %}
+      
 
-<body>
- <h1><center>Witam serdecznie na mojej stronie</center></h1>
- <h2><center>Jest to strona stworzona z pomocą wielu ludzi a znajduje się na niej</center></h2>
-  <h3><center>- Wiele śmiesznych kotów</center></h3>
-  <h3><center>- Skarpetek</center></h3>
-   <h3><center>- Prac </center></h3>
-  <center> <a href="https://djangogirls.org">zobacz co mi pomogłło osiągnąć sukces</a> </center>
-  
-</body>
+    </body>
 </html>
