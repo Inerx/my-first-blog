@@ -14,6 +14,7 @@
             {% endif %}
             <h1><a href="/">Django Girls Blog</a></h1>
         </div>
+        {% load static %} <img src="{% static "images/kotek.jpg" %}" alt="home" />
         <div class="content container">
             <div class="row">
                 <div class="col-md-8">
@@ -25,7 +26,7 @@
       <footer>
         <p>Copyright© By Igor 2022<p>
         <a href="https://github.com/Inerx/my-first-blog" target="_blank" title="Czy to zadziala?">
-        <img width="60" height="60" src="ez.png" />
+        {% load static %} <img width="60" height="60" src="{% static "images/ez.png" %}" alt="home" />
       </footer>
     </body>
 </html>
