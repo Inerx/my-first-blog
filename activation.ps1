@@ -1,0 +1,1 @@
+./virsr/Scripts/activate.ps1
