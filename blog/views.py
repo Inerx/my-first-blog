@@ -4,6 +4,8 @@ from django.utils import timezone
 from .models import Post
 from django.shortcuts import render, get_object_or_404
 from .forms import PostForm
+from django.contrib.auth import logout
+from django.http import HttpResponse
 # Create your views here.
 
 def post_new(request):
@@ -42,3 +44,11 @@ def post_edit(request, pk):
     else:
         form = PostForm(instance=post)
     return render(request, 'blog/post_edit.html', {'form': form})
+
+def user_logout(request):
+    if request.user.is_authenticated:
+        logout(request)
+    return redirect('post_list')
+
+def add_liczby(request, liczba1, liczba2):
+     return HttpResponse(liczba1 + liczba2)

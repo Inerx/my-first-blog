@@ -57,7 +57,8 @@ text-align: center;
 background-color:grey;
 color:yellow;
 padding:20px;
-position: absolute;
+position: relative;
+margin-top: 20px;
 bottom: 0;
 width:100%;
 }
