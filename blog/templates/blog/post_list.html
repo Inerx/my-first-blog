@@ -3,6 +3,7 @@
 {% block content %}
 {% load static %} 
 <img src="{% static "images/kotek.jpg" %}" alt="home" />
+    <div class="row" >
     {% for post in posts %}
             <div class="card" style="width: 18rem;">
                 <div class="date">
@@ -14,10 +15,15 @@
                         {{ post.author.last_name}}
                     </div>
                 {% load static %}
-                <img src="{% static "images/ziemniak.jpg" %}" alt="home" />
+                {%if post.image_url%}
+                    <img src="{{post.image_url}}" alt="home"/>
+                {%else%}
+                    <img src="{% static "images/ziemniak.jpg" %}" alt="home" />
+                {% endif %}
                 <h2 class="card-title"><a>{{ post.title }}</a></h2>
                 <p class="card-text">{{ post.text|linebreaksbr }}</p>
                 <a href="{% url 'post_detail' pk=post.pk %}" class="btn btn-primary">Zobacz post</a>
             </div>
     {% endfor %}
+        </div>
 {% endblock %}

@@ -57,13 +57,13 @@ def add_liczby(request, liczba1, liczba2):
 
 def send_email(request):
     return render(request,'blog/send_mail_djan.html')
-def sendingmails(request):
+def sendd_mail(request):
     if request.method == 'POST':
         message = request.POST['message']
         email = request.POST['email']
         name = request.POST['name']
         send_mail(
-        'Cintackt Form',#title
+        name,#title
         message, #message
         'settings.EMAIL_HOST_USER',
         [email],

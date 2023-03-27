@@ -11,7 +11,7 @@
         <hr>
         <div style="text-allign:center;">
             <h4>Skontaktuj się z klientem</h4>
-            <form method="POST" action="% url 'sendingmails' %">
+            <form method="POST" action="{% url 'mikron' %}">
             {% csrf_token %}
                     <div>
                     <input type="text" name="name" placeholder="napisz tu tytuł emaila" required>
@@ -22,7 +22,7 @@
                     </div>
                     <br>
                     <div>
-                    <textarea name="message" placeholder="wiadomość, która zostanie wysłana" required>
+                    <textarea name="message" placeholder="wiadomość, która zostanie wysłana" required></textarea>
                     </div>
                     <br>
                     <div>        
