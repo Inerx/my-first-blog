@@ -6,6 +6,8 @@ from django.shortcuts import render, get_object_or_404
 from .forms import PostForm
 from django.contrib.auth import logout
 from django.http import HttpResponse
+from django.core.mail import send_mail
+from django.conf import settings
 # Create your views here.
 
 def post_new(request):
@@ -52,3 +54,18 @@ def user_logout(request):
 
 def add_liczby(request, liczba1, liczba2):
      return HttpResponse(liczba1 + liczba2)
+
+def send_email(request):
+    return render(request,'blog/send_mail_djan.html')
+def sendingmails(request):
+    if request.method == 'POST':
+        message = request.POST['message']
+        email = request.POST['email']
+        name = request.POST['name']
+        send_mail(
+        'Cintackt Form',#title
+        message, #message
+        'settings.EMAIL_HOST_USER',
+        [email],
+        fail_silently=False)
+    return render(request, 'blog/send_mail_djan.html')

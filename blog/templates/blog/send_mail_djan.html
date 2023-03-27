@@ -1,0 +1,36 @@
+
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <title>bruh</title>   
+</head>
+<body>
+<header style="text-align:center;">
+        <h1>Prześlij Maila</h1>
+        <hr>
+        <div style="text-allign:center;">
+            <h4>Skontaktuj się z klientem</h4>
+            <form method="POST" action="% url 'sendingmails' %">
+            {% csrf_token %}
+                    <div>
+                    <input type="text" name="name" placeholder="napisz tu tytuł emaila" required>
+                    </div>
+                    <br>
+                    <div>
+                    <input type="email" name="email" placeholder="napisz tu adres odbiorcy" required>
+                    </div>
+                    <br>
+                    <div>
+                    <textarea name="message" placeholder="wiadomość, która zostanie wysłana" required>
+                    </div>
+                    <br>
+                    <div>        
+                    <button class="btn btn-primary mt-2"type="submit">plz work</button>
+                    
+                    </div>       
+                    <br>
+            </form>
+        </div>
+</body>
+</html>

@@ -7,6 +7,8 @@ urlpatterns = [
     path('post/new', views.post_new, name='post_new'),
     path('post/<int:pk>/edit/', views.post_edit, name='post_edit'),
     path('user_logout', views.user_logout, name='logout'),
-    path('add/<int:liczba1>/<int:liczba2>/', views.add_liczby, name='adding') 
+    path('add/<int:liczba1>/<int:liczba2>/', views.add_liczby, name='adding'), 
+    path('sendmail/new/', views.send_email, name='mailsend'),
+    path('sendmail/new/lol', views.sendd_mail, name='mikron')
  ]
 urlpatterns += staticfiles_urlpatterns()
